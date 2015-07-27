@@ -69,6 +69,8 @@
 #X obj 278 272 t f f f;
 #X obj 280 474 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 93 -21 r clock;
+#X obj 91 6 sel 0;
 #X connect 0 0 13 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 0;
@@ -137,3 +139,5 @@
 #X connect 61 1 57 0;
 #X connect 61 1 59 1;
 #X connect 61 2 60 1;
+#X connect 63 0 64 0;
+#X connect 64 0 42 0;
