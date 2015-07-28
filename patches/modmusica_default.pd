@@ -1,4 +1,4 @@
-#N canvas 80 95 1440 851 10;
+#N canvas 137 215 1440 851 10;
 #X declare;
 #N canvas 344 23 903 680 clock 0;
 #X msg 156 109 play;
@@ -3243,6 +3243,11 @@ devotional/verby-indian-male-chant.wav;
 #X obj 816 226 r alterPattern;
 #X obj 817 309 mm_alter_pattern;
 #X obj 822 372 mm_improvise;
+#X obj 381 591 s loadPatternWithPath;
+#X obj 377 492 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 382 544 read Users/travishenspeter/mm_lib/patterns/pattern/\$1-pattern.csv
+;
 #X connect 0 0 8 0;
 #X connect 0 1 9 0;
 #X connect 1 0 21 0;
@@ -3262,3 +3267,5 @@ devotional/verby-indian-male-chant.wav;
 #X connect 26 0 27 0;
 #X connect 28 0 16 0;
 #X connect 28 1 17 0;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
