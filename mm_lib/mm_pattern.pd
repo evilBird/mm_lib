@@ -1,4 +1,4 @@
-#N canvas 174 140 1309 789 10;
+#N canvas 111 121 1309 789 10;
 #X obj 862 -394 inlet;
 #X obj 173 -407 inlet;
 #X obj 212 314 outlet;
@@ -92,6 +92,8 @@
 #X obj 833 -17 s \$0-length;
 #X obj 878 25 print resetClock;
 #X obj 95 -370 r reset;
+#X obj -40 -111 s \$0-notes;
+#X msg -35 -160 const 0;
 #X connect 0 0 52 0;
 #X connect 1 0 42 0;
 #X connect 4 0 70 0;
@@ -180,4 +182,5 @@
 #X connect 78 0 77 1;
 #X connect 79 0 77 0;
 #X connect 82 0 40 0;
+#X connect 84 0 83 0;
 #X coords 0 789 1 788 700 420 0;

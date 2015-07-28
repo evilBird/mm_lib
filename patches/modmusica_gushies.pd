@@ -233,11 +233,357 @@
 #X obj 22 734 outlet~;
 #X obj 363 716 env~;
 #X obj 366 742 s drumsDB;
-#X obj -112 765 *~ 0.25;
-#X obj 202 704 *~ 0.25;
 #X obj 46 680 mm_scope~ drumScope;
-#X obj 313 54 r \$0-timer;
-#X msg 315 78 seed \$1;
+#N canvas 191 84 1214 701 edit 0;
+#X msg 41 29 send;
+#X msg 53 82 lock \$1;
+#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 63 105 zero;
+#X msg 85 156 reset;
+#X msg 74 132 revert;
+#X obj 36 299 list trim;
+#X obj 35 277 list prepend set;
+#X obj 70 435 s notes;
+#X obj 56 607 s editedNotes;
+#X obj 38 256 mm_seq_editor 4;
+#X msg 200 441 99 0 0 85 0 0 88 0 0 50 0 88 91 0 0 85 0 0 88 0 0 50
+0 88 95 0 0 89 0 0 82 0 0 94 0 0 95 0 0 87 0 0 79 0 85 87 0 79;
+#X obj 198 537 list prepend change;
+#X obj 198 560 list trim;
+#X obj 333 510 list length;
+#X floatatom 336 535 5 0 0 0 - - -;
+#N canvas 338 84 739 593 editor 0;
+#X obj 225 312 list trim;
+#X obj 224 290 list prepend set;
+#X obj 223 233 route 5;
+#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X floatatom 382 154 5 0 0 0 - - -;
+#X floatatom 326 102 5 0 0 0 - - -;
+#X floatatom 337 207 5 0 0 0 - - -;
+#X obj 223 184 mm_list_groups 12;
+#X obj 337 238 *;
+#X floatatom 336 259 5 0 0 0 - - -;
+#X obj 225 428 list prepend set;
+#X obj 224 454 list trim;
+#X obj 226 372 list-replace;
+#X obj 281 217 + 1;
+#X msg 226 515 99 0 0 85 0 0 88 0 0 50 0 88 91 0 0 85 0 0 88 0 0 50
+0 88 95 0 0 89 0 0 82 0 0 94 0 0 95 0 0 87 0 0 79 0 85 87 0 79;
+#X obj 341 390 list;
+#X obj 227 393 t a a;
+#X obj 219 92 inlet;
+#X obj 225 593 outlet;
+#X msg 621 385 make;
+#X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 220 156 list;
+#X obj 223 123 t a a;
+#X obj 379 129 t b f;
+#X msg 392 400 set;
+#X obj 218 262 list;
+#X obj 163 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 614 423 mm_makelist 0 48;
+#X msg 225 340 95 0 0 87 0 0 79 0 85 87 0 79;
+#X connect 0 0 28 0;
+#X connect 1 0 0 0;
+#X connect 2 0 25 1;
+#X connect 3 0 23 0;
+#X connect 4 0 13 0;
+#X connect 4 0 8 0;
+#X connect 5 0 7 1;
+#X connect 5 0 8 1;
+#X connect 7 0 2 0;
+#X connect 7 1 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 12 0 16 0;
+#X connect 13 0 2 1;
+#X connect 14 0 18 0;
+#X connect 16 0 10 0;
+#X connect 16 1 12 2;
+#X connect 17 0 22 0;
+#X connect 19 0 27 0;
+#X connect 20 0 18 0;
+#X connect 21 0 7 0;
+#X connect 22 0 21 1;
+#X connect 22 0 21 0;
+#X connect 22 1 12 2;
+#X connect 23 0 21 0;
+#X connect 23 1 4 0;
+#X connect 24 0 14 0;
+#X connect 25 0 1 0;
+#X connect 26 0 25 0;
+#X connect 27 0 20 0;
+#X connect 28 0 12 0;
+#X restore 194 512 pd editor tools;
+#X msg 35 329 4 99 0 0 85 0 0 88 0 0 50 0 88 91 0 0 85 0 0 88 0 0 50
+0 88 95 0 0 89 0 0 82 0 0 94 0 0 95 0 0 87 0 0 79 0 85 87 0 79 ;
+#X connect 0 0 10 0;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 10 0;
+#X connect 6 0 17 0;
+#X connect 7 0 6 0;
+#X connect 10 0 7 0;
+#X connect 10 1 11 0;
+#X connect 11 0 16 0;
+#X connect 11 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;
+#X connect 14 0 15 0;
+#X connect 16 0 12 0;
+#X connect 17 0 8 0;
+#X connect 17 0 9 0;
+#X restore 441 33 pd edit kick;
+#N canvas 179 127 1214 701 edit 0;
+#X msg 41 29 send;
+#X msg 53 82 lock \$1;
+#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 63 105 zero;
+#X msg 85 156 reset;
+#X msg 74 132 revert;
+#X obj 36 299 list trim;
+#X obj 35 277 list prepend set;
+#X msg 40 330 5 0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0
+90 0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0 90;
+#X obj 33 579 s notes;
+#X obj 56 608 s editedNotes;
+#X obj 38 256 mm_seq_editor 5;
+#X floatatom 122 508 5 0 0 0 - - -;
+#X msg 137 385 0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0 90
+0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0 90;
+#X obj 124 491 list prepend change;
+#X obj 124 525 list trim;
+#X obj 290 463 list length;
+#X floatatom 293 488 5 0 0 0 - - -;
+#N canvas 659 86 739 593 editor 0;
+#X obj 225 274 list trim;
+#X obj 224 252 list prepend set;
+#X obj 223 217 route 5;
+#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X floatatom 382 154 5 0 0 0 - - -;
+#X floatatom 326 102 5 0 0 0 - - -;
+#X floatatom 337 207 5 0 0 0 - - -;
+#X obj 223 184 mm_list_groups 12;
+#X obj 337 238 *;
+#X floatatom 336 259 5 0 0 0 - - -;
+#X obj 231 424 list prepend set;
+#X obj 230 450 list trim;
+#X obj 232 368 list-replace;
+#X obj 281 217 + 1;
+#X msg 239 483 0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0 90
+0 0 0 99 0 0 0 0 0 95 0 90 0 0 0 99 0 0 0 0 0 95 0 90;
+#X obj 347 386 list;
+#X obj 233 389 t a a;
+#X obj 219 92 inlet;
+#X obj 225 555 outlet;
+#X msg 621 385 make;
+#X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0;
+#X obj 220 156 list;
+#X obj 223 123 t a a;
+#X obj 379 129 t b f;
+#X msg 398 434 set;
+#X obj 174 234 list;
+#X obj 155 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 344 538 list length;
+#X floatatom 352 574 5 0 0 0 - - -;
+#X obj 614 423 mm_makelist 0 96;
+#X msg 225 302 0 0 0 99 0 0 0 0 0 95 0 90;
+#X connect 0 0 30 0;
+#X connect 1 0 0 0;
+#X connect 2 0 25 1;
+#X connect 3 0 23 0;
+#X connect 4 0 13 0;
+#X connect 4 0 8 0;
+#X connect 5 0 7 1;
+#X connect 5 0 8 1;
+#X connect 7 0 2 0;
+#X connect 7 1 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 12 0 16 0;
+#X connect 13 0 2 1;
+#X connect 14 0 27 0;
+#X connect 14 0 18 0;
+#X connect 16 0 10 0;
+#X connect 16 1 12 2;
+#X connect 17 0 22 0;
+#X connect 19 0 29 0;
+#X connect 20 0 18 0;
+#X connect 21 0 7 0;
+#X connect 22 0 21 1;
+#X connect 22 0 21 0;
+#X connect 22 1 12 2;
+#X connect 23 0 21 0;
+#X connect 23 1 4 0;
+#X connect 24 0 14 0;
+#X connect 25 0 1 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 29 0 20 0;
+#X connect 30 0 12 0;
+#X restore 120 466 pd editor tools;
+#X connect 0 0 11 0;
+#X connect 1 0 11 0;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 0;
+#X connect 5 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 11 0 7 0;
+#X connect 11 1 13 0;
+#X connect 13 0 18 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 18 0 14 0;
+#X restore 479 58 pd edit snare;
+#N canvas 174 62 1214 701 edit 0;
+#X msg 41 29 send;
+#X msg 53 82 lock \$1;
+#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 63 105 zero;
+#X msg 85 156 reset;
+#X msg 74 132 revert;
+#X obj 36 299 list trim;
+#X obj 35 277 list prepend set;
+#X msg 32 348 6 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99
+99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0
+;
+#X obj 33 579 s notes;
+#X obj 56 608 s editedNotes;
+#X obj 38 256 mm_seq_editor 6;
+#X floatatom 673 481 5 0 0 0 - - -;
+#X msg 187 405 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99
+99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0
+;
+#X obj 158 517 list prepend change;
+#X obj 158 540 list trim;
+#X obj 332 494 list length;
+#X floatatom 335 519 5 0 0 0 - - -;
+#N canvas 659 86 739 593 editor 0;
+#X obj 225 274 list trim;
+#X obj 224 252 list prepend set;
+#X obj 220 199 route 5;
+#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X floatatom 382 154 5 0 0 0 - - -;
+#X floatatom 326 102 5 0 0 0 - - -;
+#X floatatom 316 188 5 0 0 0 - - -;
+#X obj 216 145 mm_list_groups 12;
+#X obj 337 238 *;
+#X floatatom 336 259 5 0 0 0 - - -;
+#X obj 225 390 list prepend set;
+#X obj 224 416 list trim;
+#X obj 226 334 list-replace;
+#X obj 274 172 + 1;
+#X msg 226 477 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99
+99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0 99 0 99 99 0 0
+;
+#X obj 341 352 list;
+#X obj 227 355 t a a;
+#X obj 225 53 inlet;
+#X obj 227 541 outlet;
+#X msg 621 385 make;
+#X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 213 117 list;
+#X obj 216 84 t a a;
+#X obj 379 129 t b f;
+#X msg 392 400 set;
+#X obj 181 212 list;
+#X obj 149 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 614 423 mm_makelist 0 48;
+#X msg 225 302 99 0 99 99 0 0 99 0 99 99 0 0;
+#X connect 0 0 28 0;
+#X connect 1 0 0 0;
+#X connect 2 0 25 1;
+#X connect 3 0 23 0;
+#X connect 4 0 13 0;
+#X connect 4 0 8 0;
+#X connect 5 0 7 1;
+#X connect 5 0 8 1;
+#X connect 7 0 2 0;
+#X connect 7 1 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 14 0;
+#X connect 12 0 16 0;
+#X connect 13 0 2 1;
+#X connect 14 0 18 0;
+#X connect 16 0 10 0;
+#X connect 16 1 12 2;
+#X connect 17 0 22 0;
+#X connect 19 0 27 0;
+#X connect 20 0 18 0;
+#X connect 21 0 7 0;
+#X connect 22 0 21 1;
+#X connect 22 0 21 0;
+#X connect 22 1 12 2;
+#X connect 23 0 21 0;
+#X connect 23 1 4 0;
+#X connect 24 0 14 0;
+#X connect 25 0 1 0;
+#X connect 26 0 25 0;
+#X connect 27 0 20 0;
+#X connect 28 0 12 0;
+#X restore 154 492 pd editor tools;
+#X connect 0 0 11 0;
+#X connect 1 0 11 0;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 0;
+#X connect 5 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 11 0 7 0;
+#X connect 11 1 13 0;
+#X connect 13 0 16 0;
+#X connect 13 0 18 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 18 0 14 0;
+#X restore 509 82 pd edit perc;
+#X obj 27 611 mm_drum_mixer~ 1 1 1 1;
+#X obj 210 191 r randomize1;
+#X obj 330 289 r randomize2;
+#X obj 279 377 r randomize3;
+#X obj 216 213 mm_rbpfilter_parms 49;
+#X obj 334 311 mm_rbpfilter_parms 53;
+#X obj 276 452 mm_rbpfilter_parms 67;
+#X obj 167 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 107 369 mm_rbpfilter~ 3000 10000 2;
+#X obj 136 479 mm_rfilter~ 3000 10000 2;
+#X obj 338 184 r \$0-timer;
+#X obj 456 285 r \$0-timer;
+#X obj 401 423 r \$0-timer;
+#X obj 70 268 mm_rbpfilter~ 2000 10000 2;
 #N canvas 359 77 1440 752 snare 0;
 #X obj 162 -140 inlet;
 #X obj 158 -45 pack f f;
@@ -290,7 +636,7 @@
 #X connect 21 0 23 0;
 #X connect 22 0 23 0;
 #X connect 23 0 1 1;
-#X restore 61 162 pd snare 1;
+#X restore 60 148 pd snare;
 #N canvas 13 123 1440 752 perc 0;
 #X obj 239 762 outlet~;
 #X obj 284 -225 inlet;
@@ -364,7 +710,7 @@
 #X connect 30 0 32 0;
 #X connect 31 0 32 0;
 #X connect 32 0 12 1;
-#X restore 91 300 pd perc 1;
+#X restore 91 300 pd perc;
 #N canvas 359 77 1440 752 kick 0;
 #X obj 158 -60 inlet;
 #X obj 233 151 r loadKickSample;
@@ -417,428 +763,56 @@
 #X connect 21 0 23 0;
 #X connect 22 0 23 0;
 #X connect 23 0 5 1;
-#X restore 18 99 pd kick 1;
-#N canvas 191 84 1214 701 edit 0;
-#X msg 41 29 send;
-#X msg 53 82 lock \$1;
-#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X msg 63 105 zero;
-#X msg 85 156 reset;
-#X msg 74 132 revert;
-#X obj 36 299 list trim;
-#X obj 35 277 list prepend set;
-#X obj 75 485 s notes;
-#X obj 56 607 s editedNotes;
-#X obj 38 256 mm_seq_editor 4;
-#X msg 200 441 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0
-90 100 0 0 0 0 88 0 0 93 0 0 88 91 0 0 0 0 86 0 0 91 0 0 86 99 0 0
-0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0
-0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90;
-#X obj 198 537 list prepend change;
-#X obj 198 560 list trim;
-#X obj 333 510 list length;
-#X floatatom 336 535 5 0 0 0 - - -;
-#N canvas 338 84 739 593 editor 0;
-#X obj 225 312 list trim;
-#X obj 224 290 list prepend set;
-#X obj 223 233 route 5;
-#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X floatatom 382 154 5 0 0 0 - - -;
-#X floatatom 326 102 5 0 0 0 - - -;
-#X floatatom 337 207 5 0 0 0 - - -;
-#X obj 223 184 mm_list_groups 12;
-#X obj 337 238 *;
-#X floatatom 336 259 5 0 0 0 - - -;
-#X obj 225 428 list prepend set;
-#X obj 224 454 list trim;
-#X obj 226 372 list-replace;
-#X obj 281 217 + 1;
-#X msg 226 515 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0
-90 100 0 0 0 0 88 0 0 93 0 0 88 91 0 0 0 0 86 0 0 91 0 0 86 99 0 0
-0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0
-0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90;
-#X obj 341 390 list;
-#X obj 227 393 t a a;
-#X obj 219 92 inlet;
-#X obj 225 593 outlet;
-#X msg 621 385 make;
-#X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X obj 220 156 list;
-#X obj 223 123 t a a;
-#X obj 379 129 t b f;
-#X msg 392 400 set;
-#X obj 218 262 list;
-#X obj 163 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 614 423 mm_makelist 0 48;
-#X msg 225 340 100 0 0 0 0 88 0 0 93 0 0 88 91 0 0 0 0 86 0 0 91 0
-0 86;
-#X connect 0 0 28 0;
-#X connect 1 0 0 0;
-#X connect 2 0 25 1;
-#X connect 3 0 23 0;
-#X connect 4 0 13 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 1;
-#X connect 5 0 8 1;
-#X connect 7 0 2 0;
-#X connect 7 1 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 1;
-#X connect 10 0 11 0;
-#X connect 11 0 14 0;
-#X connect 12 0 16 0;
-#X connect 13 0 2 1;
-#X connect 14 0 18 0;
-#X connect 16 0 10 0;
-#X connect 16 1 12 2;
-#X connect 17 0 22 0;
-#X connect 19 0 27 0;
-#X connect 20 0 18 0;
-#X connect 21 0 7 0;
-#X connect 22 0 21 1;
-#X connect 22 0 21 0;
-#X connect 22 1 12 2;
-#X connect 23 0 21 0;
-#X connect 23 1 4 0;
-#X connect 24 0 14 0;
-#X connect 25 0 1 0;
-#X connect 26 0 25 0;
-#X connect 27 0 20 0;
-#X connect 28 0 12 0;
-#X restore 194 512 pd editor tools;
-#X msg 35 329 4 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0
-0 90 100 0 0 0 0 88 0 0 93 0 0 88 91 0 0 0 0 86 0 0 91 0 0 86 99 0
-0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90 99
-0 0 0 0 90 99 0 0 0 0 90 99 0 0 0 0 90;
-#X connect 0 0 10 0;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 3 0 10 0;
-#X connect 4 0 10 0;
-#X connect 5 0 10 0;
-#X connect 6 0 17 0;
-#X connect 7 0 6 0;
-#X connect 10 0 7 0;
-#X connect 10 1 11 0;
-#X connect 11 0 16 0;
-#X connect 11 0 14 0;
-#X connect 12 0 13 0;
-#X connect 13 0 10 0;
-#X connect 14 0 15 0;
-#X connect 16 0 12 0;
-#X connect 17 0 8 0;
-#X connect 17 0 9 0;
-#X restore 441 33 pd edit kick;
-#N canvas 179 127 1214 701 edit 0;
-#X msg 41 29 send;
-#X msg 53 82 lock \$1;
-#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X msg 63 105 zero;
-#X msg 85 156 reset;
-#X msg 74 132 revert;
-#X obj 36 299 list trim;
-#X obj 35 277 list prepend set;
-#X msg 40 330 5 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0
-0 0 0 0 0 0 99 99 0 0 0 0 0 0 90 90 90 90 90 0 0 0 0 0 0 0 0 0 0 0
-99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0
-0 0 0 0 0 99 99 0 0 0 0;
-#X obj 33 579 s notes;
-#X obj 56 608 s editedNotes;
-#X obj 38 256 mm_seq_editor 5;
-#X floatatom 122 508 5 0 0 0 - - -;
-#X msg 137 385 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0
-0 0 0 0 0 0 99 99 0 0 0 0 0 0 90 90 90 90 90 0 0 0 0 0 0 0 0 0 0 0
-99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0
-0 0 0 0 0 99 99 0 0 0 0;
-#X obj 124 491 list prepend change;
-#X obj 124 525 list trim;
-#X obj 290 463 list length;
-#X floatatom 293 488 5 0 0 0 - - -;
-#N canvas 659 86 739 593 editor 0;
-#X obj 225 274 list trim;
-#X obj 224 252 list prepend set;
-#X obj 223 217 route 5;
-#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X floatatom 382 154 5 0 0 0 - - -;
-#X floatatom 326 102 5 0 0 0 - - -;
-#X floatatom 337 207 5 0 0 0 - - -;
-#X obj 223 184 mm_list_groups 12;
-#X obj 337 238 *;
-#X floatatom 336 259 5 0 0 0 - - -;
-#X obj 231 424 list prepend set;
-#X obj 230 450 list trim;
-#X obj 232 368 list-replace;
-#X obj 281 217 + 1;
-#X msg 271 488 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0
-0 0 0 0 0 0 99 99 0 0 0 0 0 0 90 90 90 90 90 0 0 0 0 0 0 0 0 0 0 0
-99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0 0 0 0 0 0 99 99 0 0 0 0 0
-0 0 0 0 0 99 99 0 0 0 0;
-#X obj 347 386 list;
-#X obj 233 389 t a a;
-#X obj 219 92 inlet;
-#X obj 225 555 outlet;
-#X msg 621 385 make;
-#X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0;
-#X obj 220 156 list;
-#X obj 223 123 t a a;
-#X obj 379 129 t b f;
-#X msg 398 434 set;
-#X obj 174 234 list;
-#X obj 155 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 344 538 list length;
-#X floatatom 352 574 5 0 0 0 - - -;
-#X obj 614 423 mm_makelist 0 96;
-#X msg 225 302 0 0 90 90 90 90 90 0 0 0 0 0;
-#X connect 0 0 30 0;
-#X connect 1 0 0 0;
-#X connect 2 0 25 1;
-#X connect 3 0 23 0;
-#X connect 4 0 13 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 1;
-#X connect 5 0 8 1;
-#X connect 7 0 2 0;
-#X connect 7 1 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 1;
-#X connect 10 0 11 0;
-#X connect 11 0 14 0;
-#X connect 12 0 16 0;
-#X connect 13 0 2 1;
-#X connect 14 0 27 0;
-#X connect 14 0 18 0;
-#X connect 16 0 10 0;
-#X connect 16 1 12 2;
-#X connect 17 0 22 0;
-#X connect 19 0 29 0;
-#X connect 20 0 18 0;
-#X connect 21 0 7 0;
-#X connect 22 0 21 1;
-#X connect 22 0 21 0;
-#X connect 22 1 12 2;
-#X connect 23 0 21 0;
-#X connect 23 1 4 0;
-#X connect 24 0 14 0;
-#X connect 25 0 1 0;
-#X connect 26 0 25 0;
-#X connect 27 0 28 0;
-#X connect 29 0 20 0;
-#X connect 30 0 12 0;
-#X restore 120 466 pd editor tools;
-#X connect 0 0 11 0;
-#X connect 1 0 11 0;
-#X connect 2 0 1 0;
-#X connect 3 0 11 0;
-#X connect 4 0 11 0;
-#X connect 5 0 11 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
-#X connect 8 0 9 0;
-#X connect 8 0 10 0;
-#X connect 11 0 7 0;
-#X connect 11 1 13 0;
-#X connect 13 0 18 0;
-#X connect 13 0 16 0;
-#X connect 14 0 15 0;
-#X connect 15 0 11 0;
-#X connect 16 0 17 0;
-#X connect 18 0 14 0;
-#X restore 479 58 pd edit snare;
-#N canvas 174 62 1214 701 edit 0;
-#X msg 41 29 send;
-#X msg 53 82 lock \$1;
-#X obj 53 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X msg 63 105 zero;
-#X msg 85 156 reset;
-#X msg 74 132 revert;
-#X obj 36 299 list trim;
-#X obj 35 277 list prepend set;
-#X msg 32 348 6 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95
-0 25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25
-95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95
-0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25
-;
-#X obj 33 579 s notes;
-#X obj 56 608 s editedNotes;
-#X obj 38 256 mm_seq_editor 6;
-#X floatatom 673 481 5 0 0 0 - - -;
-#X msg 187 405 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0
-25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25
-95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95
-0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25
-;
-#X obj 158 517 list prepend change;
-#X obj 158 540 list trim;
-#X obj 332 494 list length;
-#X floatatom 335 519 5 0 0 0 - - -;
-#N canvas 659 86 739 593 editor 0;
-#X obj 225 274 list trim;
-#X obj 224 252 list prepend set;
-#X obj 220 199 route 5;
-#X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X floatatom 382 154 5 0 0 0 - - -;
-#X floatatom 326 102 5 0 0 0 - - -;
-#X floatatom 316 188 5 0 0 0 - - -;
-#X obj 216 145 mm_list_groups 12;
-#X obj 337 238 *;
-#X floatatom 336 259 5 0 0 0 - - -;
-#X obj 225 390 list prepend set;
-#X obj 224 416 list trim;
-#X obj 226 334 list-replace;
-#X obj 274 172 + 1;
-#X msg 226 477 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0
-25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25
-95 0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95
-0 25 95 0 50 95 0 25 95 0 25 95 0 25 95 0 50 95 0 25 95 0 25 95 0 25
-;
-#X obj 341 352 list;
-#X obj 227 355 t a a;
-#X obj 225 53 inlet;
-#X obj 227 541 outlet;
-#X msg 621 385 make;
-#X msg 612 451 100 100 100 100 100 100 100 100 100 100 100 100 100
-100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100
-100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100
-100;
-#X obj 213 117 list;
-#X obj 216 84 t a a;
-#X obj 379 129 t b f;
-#X msg 392 400 set;
-#X obj 181 212 list;
-#X obj 149 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 614 423 mm_makelist 100 48;
-#X msg 225 302 95 0 50 95 0 25 95 0 25 95 0 25;
-#X connect 0 0 28 0;
-#X connect 1 0 0 0;
-#X connect 2 0 25 1;
-#X connect 3 0 23 0;
-#X connect 4 0 13 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 1;
-#X connect 5 0 8 1;
-#X connect 7 0 2 0;
-#X connect 7 1 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 1;
-#X connect 10 0 11 0;
-#X connect 11 0 14 0;
-#X connect 12 0 16 0;
-#X connect 13 0 2 1;
-#X connect 14 0 18 0;
-#X connect 16 0 10 0;
-#X connect 16 1 12 2;
-#X connect 17 0 22 0;
-#X connect 19 0 27 0;
-#X connect 20 0 18 0;
-#X connect 21 0 7 0;
-#X connect 22 0 21 1;
-#X connect 22 0 21 0;
-#X connect 22 1 12 2;
-#X connect 23 0 21 0;
-#X connect 23 1 4 0;
-#X connect 24 0 14 0;
-#X connect 25 0 1 0;
-#X connect 26 0 25 0;
-#X connect 27 0 20 0;
-#X connect 28 0 12 0;
-#X restore 154 492 pd editor tools;
-#X connect 0 0 11 0;
-#X connect 1 0 11 0;
-#X connect 2 0 1 0;
-#X connect 3 0 11 0;
-#X connect 4 0 11 0;
-#X connect 5 0 11 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
-#X connect 8 0 9 0;
-#X connect 8 0 10 0;
-#X connect 11 0 7 0;
-#X connect 11 1 13 0;
-#X connect 13 0 16 0;
-#X connect 13 0 18 0;
-#X connect 14 0 15 0;
-#X connect 15 0 11 0;
-#X connect 16 0 17 0;
-#X connect 18 0 14 0;
-#X restore 509 82 pd edit perc;
-#X obj 27 611 mm_drum_mixer~ 1 1 1 1;
-#X obj 210 191 r randomize1;
-#X obj 330 289 r randomize2;
-#X obj 279 377 r randomize3;
-#X obj 190 71 r randomize0;
-#X obj 191 103 mm_rbpfilter_parms 15;
-#X obj 216 213 mm_rbpfilter_parms 49;
-#X obj 334 311 mm_rbpfilter_parms 53;
-#X obj 276 452 mm_rbpfilter_parms 67;
-#X obj 167 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 92 360 mm_rbpfilter~ 3000 10000 2;
-#X obj 136 479 mm_rfilter~ 3000 10000 2;
-#X obj 341 168 r \$0-timer;
-#X obj 453 277 r \$0-timer;
-#X obj 435 420 r \$0-timer;
-#X obj 70 268 mm_rbpfilter~ 2000 10000 2;
-#X obj 32 208 mm_shfilter~ 80 150 2;
-#X obj 18 375 *~ 0.4;
+#X restore 18 99 pd kick;
+#X obj 61 482 *~ 1.3;
+#X obj 31 227 mm_shfilter~ 125 250 2;
+#X obj 18 375 *~ 0.6;
+#X obj -112 765 *~ 0.35;
+#X obj 202 704 *~ 0.35;
 #X connect 1 0 7 0;
-#X connect 7 0 20 0;
-#X connect 7 1 18 0;
-#X connect 7 2 19 0;
-#X connect 8 0 24 4;
+#X connect 7 0 33 0;
+#X connect 7 1 31 0;
+#X connect 7 2 32 0;
+#X connect 8 0 17 4;
 #X connect 11 0 12 0;
-#X connect 13 0 5 0;
-#X connect 14 0 6 0;
-#X connect 16 0 17 0;
-#X connect 17 0 29 1;
-#X connect 18 0 39 0;
-#X connect 18 0 24 1;
-#X connect 19 0 24 2;
-#X connect 19 0 34 0;
-#X connect 19 1 24 3;
-#X connect 19 1 35 0;
-#X connect 20 0 40 0;
-#X connect 20 0 41 0;
-#X connect 24 0 10 0;
-#X connect 24 0 3 0;
-#X connect 24 0 4 0;
-#X connect 24 0 11 0;
-#X connect 24 0 13 0;
-#X connect 24 0 15 0;
-#X connect 24 1 9 0;
-#X connect 24 1 2 0;
-#X connect 24 1 0 0;
-#X connect 24 1 11 0;
-#X connect 24 1 14 0;
-#X connect 24 1 15 0;
-#X connect 25 0 30 0;
-#X connect 26 0 31 0;
-#X connect 27 0 32 0;
-#X connect 28 0 29 0;
-#X connect 30 0 39 1;
-#X connect 31 0 34 1;
-#X connect 32 0 35 1;
-#X connect 33 0 30 0;
-#X connect 34 0 24 2;
-#X connect 35 0 24 3;
-#X connect 36 0 30 1;
-#X connect 37 0 31 1;
-#X connect 38 0 32 1;
-#X connect 39 0 24 1;
-#X connect 40 0 41 0;
-#X connect 41 0 24 0;
+#X connect 17 0 10 0;
+#X connect 17 0 3 0;
+#X connect 17 0 4 0;
+#X connect 17 0 11 0;
+#X connect 17 0 13 0;
+#X connect 17 0 37 0;
+#X connect 17 1 9 0;
+#X connect 17 1 2 0;
+#X connect 17 1 0 0;
+#X connect 17 1 11 0;
+#X connect 17 1 13 0;
+#X connect 17 1 38 0;
+#X connect 18 0 21 0;
+#X connect 19 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 30 1;
+#X connect 22 0 25 1;
+#X connect 23 0 26 1;
+#X connect 24 0 21 0;
+#X connect 25 0 17 2;
+#X connect 26 0 17 3;
+#X connect 27 0 21 1;
+#X connect 28 0 22 1;
+#X connect 29 0 23 1;
+#X connect 30 0 34 0;
+#X connect 31 0 30 0;
+#X connect 31 0 34 0;
+#X connect 32 0 17 2;
+#X connect 32 0 25 0;
+#X connect 32 1 17 3;
+#X connect 32 1 26 0;
+#X connect 33 0 35 0;
+#X connect 33 0 36 0;
+#X connect 34 0 17 1;
+#X connect 35 0 36 0;
+#X connect 36 0 17 0;
+#X connect 37 0 5 0;
+#X connect 38 0 6 0;
 #X restore 13 255 pd drums;
 #N canvas 484 163 914 637 out 0;
 #X obj 108 514 dac~;
@@ -1975,8 +1949,8 @@ milliseconds \, based on samplerate.;
 #X obj -5 65 inlet~;
 #X obj 86 210 outlet~;
 #X obj 9 215 outlet~;
-#X msg 81 85 0.6;
-#X msg 104 104 0.4;
+#X msg 81 85 0.3;
+#X msg 104 104 0.8;
 #X connect 0 0 7 0;
 #X connect 0 1 6 0;
 #X connect 1 0 8 0;
@@ -2031,7 +2005,7 @@ milliseconds \, based on samplerate.;
 #X connect 20 0 12 0;
 #X connect 21 0 13 0;
 #X restore 15 405 pd fx;
-#N canvas 258 166 1429 845 bass 0;
+#N canvas 18 91 1429 845 bass 0;
 #X obj 503 213 mm_bass_notes;
 #X obj 541 172 r notes;
 #X obj 599 172 r \$0-randomNotes;
@@ -2073,7 +2047,7 @@ milliseconds \, based on samplerate.;
 #X obj 651 901 *~ 0.2;
 #X obj 546 895 *~ 0.2;
 #X obj 529 789 mm_bass_mixer~;
-#X obj 624 749 r \$0-detectedTempo;
+#X obj 616 728 r \$0-detectedTempo;
 #X obj 446 910 outlet~;
 #X obj 758 902 outlet~;
 #X obj 828 887 s bassDB;
@@ -2101,7 +2075,7 @@ milliseconds \, based on samplerate.;
 #X obj 224 252 list prepend set;
 #X obj 223 217 route 5;
 #X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X floatatom 382 154 5 0 0 0 - - -;
 #X floatatom 326 102 5 0 0 0 - - -;
 #X floatatom 337 207 5 0 0 0 - - -;
@@ -2126,20 +2100,12 @@ milliseconds \, based on samplerate.;
 #X obj 174 234 list;
 #X obj 155 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 227 468 36 0 0 0 0 0 0 0 0 0 0 43 45 0 48 0 0 48 0 0 43 45 0
-48 37 0 0 0 0 40 0 0 0 0 0 43 0 0 0 0 0 46 0 0 45 0 0 45 38 0 0 0 0
-0 0 0 33 0 0 38 0 0 0 0 0 45 0 0 44 0 0 38 43 0 0 0 0 0 0 0 0 0 0 33
-31 0 35 38 0 41 0 0 40 0 0 38;
-#X obj 569 174 list-map;
-#X obj 633 175 +;
+#X msg 227 468 41 0 0 45 0 0 48 0 0 50 0 48 41 0 0 45 0 0 48 0 0 50
+0 48 45 0 0 49 0 0 52 0 0 54 0 0 45 0 0 47 0 0 49 0 45 47 0 49;
 #X obj 614 423 mm_makelist 0 48;
-#X msg 225 302 43 0 0 0 0 0 0 0 0 0 0 33 31 0 35 38 0 41 0 0 40 0 0
-38;
-#X msg 446 237 36 0 0 0 0 0 0 0 0 0 0 43 45 0 48 0 0 48 0 0 43 45 0
-48 37 0 0 0 0 40 0 0 0 0 0 43 0 0 0 0 0 46 0 0 45 0 0 45 38 0 0 0 0
-0 0 0 33 0 0 38 0 0 0 0 0 45 0 0 44 0 0 38 43 0 0 0 0 0 0 0 0 0 0 33
-31 0 35 38 0 41 0 0 40 0 0 38;
-#X connect 0 0 30 0;
+#X msg 225 302 45 0 0 49 0 0 52 0 0 54 0 0 45 0 0 47 0 0 49 0 45 47
+0 49;
+#X connect 0 0 28 0;
 #X connect 1 0 0 0;
 #X connect 2 0 24 1;
 #X connect 3 0 22 0;
@@ -2158,7 +2124,7 @@ milliseconds \, based on samplerate.;
 #X connect 15 0 10 0;
 #X connect 15 1 12 2;
 #X connect 16 0 21 0;
-#X connect 18 0 29 0;
+#X connect 18 0 27 0;
 #X connect 19 0 17 0;
 #X connect 20 0 7 0;
 #X connect 21 0 20 1;
@@ -2170,22 +2136,15 @@ milliseconds \, based on samplerate.;
 #X connect 24 0 1 0;
 #X connect 25 0 24 0;
 #X connect 26 0 17 0;
-#X connect 27 1 28 0;
-#X connect 28 0 27 1;
-#X connect 29 0 19 0;
-#X connect 30 0 12 0;
-#X connect 31 0 17 0;
+#X connect 27 0 19 0;
+#X connect 28 0 12 0;
 #X restore 123 39 pd editor tools;
 #X obj 253 39 list length;
 #X floatatom 263 79 5 0 0 0 - - -;
-#X msg 121 -32 36 0 0 0 0 0 0 0 0 0 0 43 45 0 48 0 0 48 0 0 43 45 0
-48 37 0 0 0 0 40 0 0 0 0 0 43 0 0 0 0 0 46 0 0 45 0 0 45 38 0 0 0 0
-0 0 0 33 0 0 38 0 0 0 0 0 45 0 0 44 0 0 38 43 0 0 0 0 0 0 0 0 0 0 33
-31 0 35 38 0 41 0 0 40 0 0 38;
-#X msg -2 -101 0 36 0 0 0 0 0 0 0 0 0 0 43 45 0 48 0 0 48 0 0 43 45
-0 48 37 0 0 0 0 40 0 0 0 0 0 43 0 0 0 0 0 46 0 0 45 0 0 45 38 0 0 0
-0 0 0 0 33 0 0 38 0 0 0 0 0 45 0 0 44 0 0 38 43 0 0 0 0 0 0 0 0 0 0
-33 31 0 35 38 0 41 0 0 40 0 0 38;
+#X msg 121 -32 41 0 0 45 0 0 48 0 0 50 0 48 41 0 0 45 0 0 48 0 0 50
+0 48 45 0 0 49 0 0 52 0 0 54 0 0 45 0 0 47 0 0 49 0 45 47 0 49;
+#X msg -2 -101 0 41 0 0 45 0 0 48 0 0 50 0 48 41 0 0 45 0 0 48 0 0
+50 0 48 45 0 0 49 0 0 52 0 0 54 0 0 45 0 0 47 0 0 49 0 45 47 0 49;
 #X connect 0 0 12 0;
 #X connect 0 1 17 0;
 #X connect 1 0 0 0;
@@ -2206,16 +2165,12 @@ milliseconds \, based on samplerate.;
 #X connect 17 0 15 0;
 #X connect 18 0 8 0;
 #X connect 18 0 9 0;
-#X restore 293 444 pd bass editor;
+#X restore 1035 389 pd bass editor;
 #X floatatom 520 248 5 0 0 0 - - -;
-#X obj 484 462 mm_8bit~;
-#X obj 477 367 osc~;
-#X obj 487 336 mtof;
 #X obj 485 559 mm_asr~;
-#X obj 489 301 t f b;
+#X obj 489 303 t f b;
 #X floatatom 539 314 5 0 0 0 - - -;
 #X floatatom 578 259 5 0 0 0 - - -;
-#X obj 492 704 *~ 0.5;
 #X obj 567 501 loadbang;
 #X msg 529 643 switch 1 \, threshold 98 \, ratio 1.4;
 #X obj 666 556 r detected;
@@ -2226,25 +2181,65 @@ milliseconds \, based on samplerate.;
 #X msg 746 223 time \$1;
 #X obj 790 341 r onOff;
 #X msg 788 364 on \$1;
-#X msg 568 529 a 30 \, s 250 \, r 30;
-#X obj 314 334 line;
-#X msg 315 285 \$1 \$2;
-#X obj 315 218 r msPerTick;
 #X floatatom 814 234 5 0 0 0 - - -;
 #X obj 510 602 mm_rbpfilter~ 50 2500 4;
 #X msg 867 315;
-#X obj 852 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 852 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 817 287 5 0 0 0 - - -;
-#X msg 548 429 512;
-#X obj 506 487 mm_shfilter~ 200 5000 1 1;
-#X floatatom 541 394 5 0 0 0 - - -;
 #X floatatom 614 382 5 0 0 0 - - -;
 #X obj 610 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 569 352 mm_srandom 1024 332;
 #X obj 616 290 r randomize0;
-#X connect 0 0 29 0;
+#N canvas 530 297 617 462 synth 0;
+#X obj 207 161 osc~;
+#X obj 208 133 mtof;
+#X obj 206 186 mm_8bit~;
+#X obj 208 104 mm_gliss 0.05 50;
+#X obj 268 189 osc~;
+#X obj 269 161 mtof;
+#X obj 267 215 mm_8bit~;
+#X obj 269 132 mm_gliss 0.05 50;
+#X obj 142 124 osc~;
+#X obj 143 96 mtof;
+#X obj 141 150 mm_8bit~;
+#X obj 143 67 mm_gliss 0.05 50;
+#X obj 266 247 *~ 1;
+#X obj 206 216 *~ 0.66;
+#X obj 187 10 t f f f;
+#X obj 216 41 + 12;
+#X obj 149 41 + 7;
+#X obj 169 311 outlet~;
+#X obj 190 -27 inlet;
+#X obj 141 175 *~ 0.13;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 1 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 10 0 19 0;
+#X connect 11 0 9 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 16 0;
+#X connect 14 1 15 0;
+#X connect 14 2 7 0;
+#X connect 15 0 3 0;
+#X connect 16 0 11 0;
+#X connect 18 0 14 0;
+#X connect 19 0 17 0;
+#X restore 489 382 pd synth;
+#X obj 492 704 *~ 0.33;
+#X floatatom 870 261 5 0 0 0 - - -;
+#X msg 568 529 a 30 \, s 350 \, r 30;
+#X obj 505 460 mm_shfilter~ 125 3500 1 10;
+#X connect 0 0 26 0;
 #X connect 0 0 24 0;
 #X connect 1 0 0 1;
 #X connect 2 0 0 2;
@@ -2267,39 +2262,35 @@ milliseconds \, based on samplerate.;
 #X connect 15 1 20 0;
 #X connect 16 0 15 2;
 #X connect 20 0 19 0;
-#X connect 22 0 32 0;
-#X connect 25 0 53 0;
-#X connect 25 0 28 0;
-#X connect 26 0 25 0;
-#X connect 27 0 26 0;
-#X connect 28 0 22 0;
-#X connect 28 0 48 0;
-#X connect 29 0 27 0;
-#X connect 29 1 28 1;
-#X connect 31 0 29 0;
-#X connect 32 0 15 0;
-#X connect 32 0 15 1;
-#X connect 33 0 43 0;
+#X connect 22 0 49 0;
+#X connect 25 0 22 0;
+#X connect 25 0 40 0;
+#X connect 26 0 48 0;
+#X connect 26 1 25 1;
+#X connect 28 0 26 0;
+#X connect 29 0 51 0;
+#X connect 29 0 30 0;
+#X connect 30 0 22 1;
 #X connect 33 0 34 0;
-#X connect 34 0 22 1;
+#X connect 34 0 40 1;
+#X connect 35 0 36 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 1;
 #X connect 37 0 38 0;
-#X connect 38 0 48 1;
-#X connect 39 0 40 0;
-#X connect 39 0 47 0;
-#X connect 40 0 48 1;
-#X connect 41 0 42 0;
-#X connect 42 0 48 1;
-#X connect 43 0 28 2;
-#X connect 48 0 22 0;
-#X connect 50 0 42 0;
-#X connect 51 0 38 0;
-#X connect 52 0 25 1;
-#X connect 53 0 28 0;
-#X connect 54 0 25 1;
-#X connect 56 0 57 0;
-#X connect 57 0 55 0;
-#X connect 57 0 25 1;
-#X connect 58 0 56 0;
+#X connect 38 0 40 1;
+#X connect 40 0 22 0;
+#X connect 42 0 38 0;
+#X connect 43 0 34 0;
+#X connect 45 0 46 0;
+#X connect 46 0 44 0;
+#X connect 47 0 45 0;
+#X connect 48 0 25 0;
+#X connect 48 0 52 0;
+#X connect 49 0 15 0;
+#X connect 49 0 15 1;
+#X connect 50 0 34 0;
+#X connect 51 0 25 2;
+#X connect 52 0 25 0;
 #X restore 14 165 pd bass;
 #N canvas 96 135 1332 748 randomness 0;
 #X obj 1143 -222 loadbang;
@@ -2617,8 +2608,8 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 15 0 13 1;
 #X connect 16 0 5 0;
 #X restore 14 1 pd samplers;
-#N canvas 350 183 1021 614 synths 1;
-#N canvas 157 23 1440 851 synth 1;
+#N canvas 350 183 1021 614 synths 0;
+#N canvas 157 107 1440 851 synth 0;
 #X obj 445 833 outlet~;
 #X obj 222 819 outlet~;
 #X obj 229 154 inlet;
@@ -2644,17 +2635,15 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 38 256 mm_seq_editor 1;
 #X obj 248 519 list length;
 #X floatatom 246 546 5 0 0 0 - - -;
-#X msg 173 410 60 65 67 60 64 67 60 64 67 60 64 67 60 65 67 60 64 67
-60 64 67 60 64 67 61 64 67 64 67 64 61 64 67 64 61 64 61 64 67 64 67
-64 61 64 67 64 61 64 62 65 69 74 69 74 69 65 62 65 69 74 62 65 69 74
-69 74 69 65 62 65 69 74 55 59 62 65 67 65 67 71 74 71 67 65 55 59 62
-65 67 65 67 71 74 71 67 65;
+#X msg 173 410 65 69 65 65 69 65 65 69 65 65 69 65 65 69 65 65 69 65
+65 69 65 65 69 65 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69 73
+79 69 73 79 69 73 79;
 #N canvas 473 66 739 593 editor 0;
 #X obj 225 274 list trim;
 #X obj 224 252 list prepend set;
 #X obj 223 217 route 5;
 #X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 7;
 #X floatatom 382 154 5 0 0 0 - - -;
 #X floatatom 326 102 5 0 0 0 - - -;
 #X floatatom 337 207 5 0 0 0 - - -;
@@ -2665,20 +2654,16 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 224 416 list trim;
 #X obj 226 334 list-replace;
 #X obj 281 217 + 1;
-#X msg 226 477 60 65 67 60 64 67 60 64 67 60 64 67 60 65 67 60 64 67
-60 64 67 60 64 67 61 64 67 64 67 64 61 64 67 64 61 64 61 64 67 64 67
-64 61 64 67 64 61 64 62 65 69 74 69 74 69 65 62 65 69 74 62 65 69 74
-69 74 69 65 62 65 69 74 55 59 62 65 67 65 67 71 74 71 67 65 55 59 62
-65 67 65 67 71 74 71 67 65;
+#X msg 226 477 65 69 65 65 69 65 65 69 65 65 69 65 65 69 65 65 69 65
+65 69 65 65 69 65 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69 73
+79 69 73 79 69 73 79;
 #X obj 341 352 list;
 #X obj 227 355 t a a;
 #X obj 219 92 inlet;
 #X obj 225 555 outlet;
 #X msg 621 385 make;
 #X msg 612 451 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0;
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X obj 220 156 list;
 #X obj 223 123 t a a;
 #X obj 379 129 t b f;
@@ -2693,8 +2678,8 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 713 290 - 6;
 #N canvas 957 536 450 300 map 0;
 #X restore 517 231 pd map;
-#X obj 614 423 mm_makelist 0 96;
-#X msg 225 304 60 65 67 60 64 67 60 64 67 60 64 67;
+#X obj 614 423 mm_makelist 0 48;
+#X msg 225 304 69 73 79 69 73 79;
 #X connect 0 0 34 0;
 #X connect 1 0 0 0;
 #X connect 2 0 25 1;
@@ -2734,16 +2719,9 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 33 0 20 0;
 #X connect 34 0 12 0;
 #X restore 302 491 pd editor tools;
-#X msg 40 344 1 60 65 67 60 64 67 60 64 67 60 64 67 60 65 67 60 64
-67 60 64 67 60 64 67 61 64 67 64 67 64 61 64 67 64 61 64 61 64 67 64
-67 64 61 64 67 64 61 64 62 65 69 74 69 74 69 65 62 65 69 74 62 65 69
-74 69 74 69 65 62 65 69 74 55 59 62 65 67 65 67 71 74 71 67 65 55 59
-62 65 67 65 67 71 74 71 67 65;
-#X msg 182 199 60 65 67 60 64 67 60 64 67 60 64 67 60 65 67 60 64 67
-60 64 67 60 64 67 61 64 67 64 67 64 61 64 67 64 61 64 61 64 67 64 67
-64 61 64 67 64 61 64 62 65 69 74 69 74 69 65 62 65 69 74 62 65 69 74
-69 74 69 65 62 65 69 74 55 59 62 65 67 65 67 71 74 71 67 65 55 59 62
-65 67 65 67 71 74 71 67 65;
+#X msg 40 344 1 65 69 65 65 69 65 65 69 65 65 69 65 65 69 65 65 69
+65 65 69 65 65 69 65 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69
+73 79 69 73 79 69 73 79;
 #X connect 0 0 13 0;
 #X connect 1 0 13 0;
 #X connect 2 0 1 0;
@@ -2763,7 +2741,6 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 17 0 6 0;
 #X connect 18 0 10 0;
 #X connect 18 0 11 0;
-#X connect 19 0 6 0;
 #X restore 171 100 pd edit synth 1;
 #N canvas 174 154 1214 701 edit 0;
 #X msg 41 29 send;
@@ -2784,16 +2761,15 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X msg 705 309 52 56 59 62 64 68 71 74;
 #X obj 318 502 list length;
 #X floatatom 322 524 5 0 0 0 - - -;
-#X msg 135 409 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 67 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
+#X msg 135 409 69 76 77 69 76 77 69 76 77 69 76 77 69 76 77 69 76 77
+69 76 77 69 76 77 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69 73
+79 69 73 79 69 73 79;
 #N canvas 475 105 739 593 editor 0;
 #X obj 225 274 list trim;
 #X obj 224 252 list prepend set;
 #X obj 223 217 route 5;
 #X obj 381 106 hradio 15 1 0 16 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 7;
 #X floatatom 382 154 5 0 0 0 - - -;
 #X floatatom 326 102 5 0 0 0 - - -;
 #X floatatom 337 207 5 0 0 0 - - -;
@@ -2804,10 +2780,9 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 224 498 list trim;
 #X obj 226 416 list-replace;
 #X obj 281 217 + 1;
-#X msg 226 559 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 67 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
+#X msg 226 559 69 76 77 69 76 77 69 76 77 69 76 77 69 76 77 69 76 77
+69 76 77 69 76 77 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69 73
+79 69 73 79 69 73 79;
 #X obj 341 434 list;
 #X obj 227 437 t a a;
 #X obj 219 92 inlet;
@@ -2828,8 +2803,7 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X msg 776 95 set;
 #X obj 409 386 list length;
 #X floatatom 409 412 5 0 0 0 - - -;
-#X msg 227 329 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 67 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0;
+#X msg 227 329 69 73 79 69 73 79;
 #X connect 0 0 31 0;
 #X connect 1 0 0 0;
 #X connect 2 0 26 1;
@@ -2865,10 +2839,9 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 31 0 29 0;
 #X connect 31 0 12 0;
 #X restore 126 494 pd editor tools;
-#X msg 38 331 2 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 67 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
+#X msg 38 331 2 69 76 77 69 76 77 69 76 77 69 76 77 69 76 77 69 76
+77 69 76 77 69 76 77 69 73 79 69 73 79 69 73 79 69 73 79 69 73 79 69
+73 79 69 73 79 69 73 79;
 #X connect 0 0 12 0;
 #X connect 1 0 12 0;
 #X connect 2 0 1 0;
@@ -2907,16 +2880,15 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 38 256 mm_seq_editor 3;
 #X obj 191 554 list length;
 #X floatatom 192 575 5 0 0 0 - - -;
-#X msg 124 420 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 64 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
+#X msg 124 420 65 60 65 65 60 65 65 60 65 65 60 65 65 60 65 65 60 65
+65 60 65 65 60 65 69 64 69 69 64 69 69 64 69 69 64 69 69 64 69 69 64
+69 69 64 69 69 64 69;
 #N canvas 410 89 739 593 editor 0;
 #X obj 225 274 list trim;
 #X obj 224 252 list prepend set;
 #X obj 223 217 route 5;
 #X obj 381 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 7;
 #X floatatom 382 154 5 0 0 0 - - -;
 #X floatatom 326 102 5 0 0 0 - - -;
 #X floatatom 337 207 5 0 0 0 - - -;
@@ -2946,12 +2918,10 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 -1 -1;
 #X obj 457 234 list length;
 #X floatatom 456 269 5 0 0 0 - - -;
-#X msg 231 543 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 64 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
-#X msg 243 323 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 64 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0;
+#X msg 231 543 65 60 65 65 60 65 65 60 65 65 60 65 65 60 65 65 60 65
+65 60 65 65 60 65 69 64 69 69 64 69 69 64 69 69 64 69 69 64 69 69 64
+69 69 64 69 69 64 69;
+#X msg 243 323 69 64 69 69 64 69;
 #X connect 0 0 30 0;
 #X connect 1 0 0 0;
 #X connect 2 0 25 1;
@@ -2988,10 +2958,9 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 30 0 27 0;
 #X connect 30 0 12 0;
 #X restore 130 488 pd editor tools;
-#X msg 35 329 3 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64 0 0 64
-0 0 61 0 0 64 0 0 70 0 0 67 0 0 64 0 0 61 0 0 64 0 0 67 0 0 62 0 0
-65 0 0 62 0 0 69 0 0 65 0 0 69 0 0 74 0 0 65 0 0 67 0 0 71 0 0 74 0
-0 77 0 0 74 0 0 71 0 0 67 0 0 71 0 0;
+#X msg 35 329 3 65 60 65 65 60 65 65 60 65 65 60 65 65 60 65 65 60
+65 65 60 65 65 60 65 69 64 69 69 64 69 69 64 69 69 64 69 69 64 69 69
+64 69 69 64 69 69 64 69;
 #X connect 0 0 13 0;
 #X connect 1 0 13 0;
 #X connect 2 0 1 0;
@@ -3539,7 +3508,7 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 99 0 100 0;
 #X connect 100 0 98 0;
 #X restore 813 61 pd globals;
-#X obj 812 213 r alterPattern;
+#X obj 809 226 r alterPattern;
 #X obj 813 295 mm_alter_pattern;
 #X obj 822 372 mm_improvise;
 #X obj 11 656 s goBackToNormal;
@@ -3549,13 +3518,14 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X obj 17 681 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 812 264 spigot;
-#X obj 887 237 r \$0-allowPatternAlteration;
+#X obj 920 239 r \$0-allowPatternAlteration;
 #X obj 986 184 loadbang;
-#X msg 984 207 1;
 #X obj 15 703 s \$0-allowPatternAlteration;
-#X msg 372 534 read Users/travishenspeter/mm_lib/\$1-gushies.csv;
 #X obj 367 482 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
+#X msg 372 534 read Users/travishenspeter/mm_lib/patterns/gushies/\$1-gushies.csv
+;
+#X msg 984 207 0;
 #X connect 0 0 8 0;
 #X connect 0 1 9 0;
 #X connect 1 0 21 0;
@@ -3576,10 +3546,10 @@ devotional/chant-mantra-pitchcorrected-2.wav;
 #X connect 28 0 16 0;
 #X connect 28 1 17 0;
 #X connect 30 0 29 0;
-#X connect 32 0 37 0;
+#X connect 32 0 36 0;
 #X connect 33 0 27 0;
 #X connect 34 0 33 1;
-#X connect 35 0 36 0;
-#X connect 36 0 33 1;
+#X connect 35 0 39 0;
+#X connect 37 0 38 0;
 #X connect 38 0 31 0;
-#X connect 39 0 38 0;
+#X connect 39 0 33 1;
