@@ -62,7 +62,7 @@
 #X obj 179 125 tabread \$0-notes;
 #X obj 359 247 tabwrite \$0-notes;
 #X obj 861 -371 route length reverse rate sparse offset read;
-#X obj 1065 -184 s \$0-read;
+#X obj 1063 -125 s \$0-read;
 #X obj 616 185 t f b;
 #X obj 646 211 f;
 #X obj 677 211 + 1;
@@ -92,8 +92,9 @@
 #X obj 833 -17 s \$0-length;
 #X obj 878 25 print resetClock;
 #X obj 95 -370 r reset;
-#X obj -40 -111 s \$0-notes;
-#X msg -35 -160 const 0;
+#X obj 1085 -19 s \$0-notes;
+#X msg 1090 -47 const 0;
+#X obj 1062 -166 t a b;
 #X connect 0 0 52 0;
 #X connect 1 0 42 0;
 #X connect 4 0 70 0;
@@ -153,7 +154,7 @@
 #X connect 52 2 19 0;
 #X connect 52 3 23 0;
 #X connect 52 4 41 0;
-#X connect 52 5 53 0;
+#X connect 52 5 85 0;
 #X connect 54 0 62 0;
 #X connect 54 1 55 0;
 #X connect 55 0 56 0;
@@ -183,4 +184,6 @@
 #X connect 79 0 77 0;
 #X connect 82 0 40 0;
 #X connect 84 0 83 0;
+#X connect 85 0 53 0;
+#X connect 85 1 84 0;
 #X coords 0 789 1 788 700 420 0;
