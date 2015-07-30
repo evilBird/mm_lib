@@ -3,7 +3,7 @@
 #X msg 253 -60 arm;
 #X msg 390 -60 clear;
 #X msg 342 -61 slice;
-#X obj 310 414 s noiseCancelState;
+#X obj 302 337 s noiseCancelState;
 #X obj 152 -126 inlet~;
 #X obj 252 -123 inlet;
 #X msg 433 -61 randomize;
@@ -15,7 +15,7 @@
 #X obj 406 102 + 5;
 #X msg 497 138 edge lower \$1;
 #X msg 403 137 edge upper \$1;
-#X obj 253 -95 route arm play slice clear randomize threshold tempo
+#X obj 255 -98 route arm play slice clear randomize threshold tempo
 ;
 #X obj 221 439 loadbang;
 #X obj 165 473 *~ 1.5;
@@ -23,7 +23,9 @@
 #X obj 166 540 *~ 2;
 #X obj 166 502 mm_compressor~;
 #X obj 164 293 mm_sample_slicer2~;
-#X obj 263 335 bng;
+#X obj 263 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 648 -48 5 0 0 0 - - -;
 #X connect 0 0 22 1;
 #X connect 1 0 22 1;
 #X connect 2 0 22 1;
@@ -45,6 +47,7 @@
 #X connect 16 4 7 0;
 #X connect 16 5 11 0;
 #X connect 16 6 8 0;
+#X connect 16 6 24 0;
 #X connect 17 0 19 0;
 #X connect 18 0 21 0;
 #X connect 19 0 21 1;

@@ -55,6 +55,12 @@
 #X obj 443 456 throw~ \$0-outR;
 #X msg 321 308 switch 1 \, threshold 98 \, ratio 1.2;
 #X msg 482 385 switch 1 \, threshold 98 \, ratio 1.2;
+#X obj 730 349 loadbang;
+#X obj 681 475 mm_compressor~;
+#X obj 967 424 loadbang;
+#X obj 918 476 mm_compressor~;
+#X msg 720 372 switch 1 \, threshold 98 \, ratio 1.2;
+#X msg 957 447 switch 1 \, threshold 98 \, ratio 1.2;
 #X connect 0 0 10 0;
 #X connect 1 0 11 0;
 #X connect 2 0 12 0;
@@ -73,7 +79,7 @@
 #X connect 15 0 14 1;
 #X connect 16 0 18 0;
 #X connect 17 0 33 0;
-#X connect 17 0 30 0;
+#X connect 17 0 59 0;
 #X connect 18 0 17 1;
 #X connect 19 0 21 0;
 #X connect 20 0 35 0;
@@ -81,7 +87,7 @@
 #X connect 21 0 20 1;
 #X connect 22 0 24 0;
 #X connect 23 0 33 0;
-#X connect 23 0 29 0;
+#X connect 23 0 57 0;
 #X connect 24 0 23 1;
 #X connect 31 0 4 0;
 #X connect 32 0 5 0;
@@ -102,3 +108,9 @@
 #X connect 51 0 50 1;
 #X connect 54 0 9 1;
 #X connect 55 0 47 1;
+#X connect 56 0 60 0;
+#X connect 57 0 29 0;
+#X connect 58 0 61 0;
+#X connect 59 0 30 0;
+#X connect 60 0 57 1;
+#X connect 61 0 59 1;

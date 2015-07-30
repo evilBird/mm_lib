@@ -9,13 +9,13 @@
 #X obj 67 -1034 *~;
 #X obj 111 -1060 lop~ 1;
 #X obj 108 -1091 r samplerVolume;
-#X obj 370 -520 r randomize0;
+#X obj 390 -520 r randomize0;
 #X obj 372 -555 r \$0-control_messages;
 #X obj 19 -1160 inlet~;
 #X obj 18 -1117 *~ \$1;
 #X obj 15 -1037 *~;
-#X obj 11 -996 throw~ \$0-outL;
-#X obj 55 -951 throw~ \$0-outR;
+#X obj 18 -996 throw~ \$0-outL;
+#X obj 66 -962 throw~ \$0-outR;
 #X obj 320 -1153 inlet~;
 #X obj 316 -1030 *~;
 #X obj 360 -1056 lop~ 1;
