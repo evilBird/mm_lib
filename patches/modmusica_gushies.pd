@@ -3902,7 +3902,7 @@ milliseconds \, based on samplerate.;
 #X obj 383 716 mm_pingpong~;
 #X obj 149 609 r randomize3;
 #X obj 81 645 mm_strummer~;
-#X obj 84 565 r \$0-clock;
+#X obj 84 591 r \$0-clock;
 #X obj 149 672 *~ 0.33;
 #X obj 80 673 *~ 0.33;
 #X connect 0 0 6 0;
@@ -4376,7 +4376,7 @@ milliseconds \, based on samplerate.;
 -1 -1;
 #X obj 445 602 s loadPatternWithPath;
 #X obj 446 473 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X msg 446 555 read Users/travishenspeter/mm_lib/patterns/gushies/\$1-gushies.csv
 ;
 #N canvas 556 406 450 300 gliss 0;
