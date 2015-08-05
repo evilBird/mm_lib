@@ -1,4 +1,4 @@
-#N canvas 185 156 862 755 10;
+#N canvas 108 23 1129 851 10;
 #X msg 214 49 0;
 #X obj 185 237 metro;
 #X obj 316 128 swap 60000;
@@ -29,7 +29,7 @@
 #X obj 778 403 r \$0-numberMeasures;
 #X obj 776 357 t b f;
 #X obj 778 430 t b f;
-#X obj 730 506 s \$0-patternLength;
+#X obj 769 636 s \$0-patternLength;
 #X msg 172 928 clock \$1;
 #X obj 69 952 r \$0-patternLength;
 #X msg 69 974 length \$1;
@@ -106,7 +106,7 @@
 #X obj 314 215 / \$3;
 #X obj 628 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 626 559 print length;
+#X obj 626 638 print length;
 #N canvas 659 400 450 300 swing 0;
 #X obj 128 -22 inlet;
 #X obj 160 94 sel 0 1;
@@ -217,6 +217,9 @@
 #X obj 295 608 mm_invert 1;
 #X obj 335 958 mm_click~;
 #X obj 168 164 mm_countin;
+#X obj 728 588 moses 0;
+#X obj 756 548 r patternLength;
+#X obj 769 611 change;
 #X connect 0 0 1 0;
 #X connect 1 0 85 0;
 #X connect 2 0 3 0;
@@ -271,9 +274,9 @@
 #X connect 41 0 42 0;
 #X connect 42 0 39 0;
 #X connect 42 0 43 0;
-#X connect 43 0 30 0;
 #X connect 43 0 38 0;
 #X connect 43 0 106 0;
+#X connect 43 0 152 0;
 #X connect 44 0 16 0;
 #X connect 45 0 18 0;
 #X connect 46 0 19 0;
@@ -405,3 +408,6 @@
 #X connect 150 0 144 0;
 #X connect 151 0 74 0;
 #X connect 151 1 1 0;
+#X connect 152 1 154 0;
+#X connect 153 0 152 0;
+#X connect 154 0 30 0;

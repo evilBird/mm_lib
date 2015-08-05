@@ -1,0 +1,31 @@
+#N canvas 382 225 882 598 10;
+#X obj 127 206 bng 25 250 50 0 empty empty clear 0 -5 0 10 -262144
+-1 -1;
+#X obj 240 203 bng 25 250 50 0 empty empty save 0 -5 0 10 -262144 -1
+-1;
+#X symbolatom 123 121 10 0 0 2 name - -;
+#X floatatom 123 167 5 0 0 2 measures - -;
+#X floatatom 180 167 5 0 0 2 beats - -;
+#X floatatom 233 166 5 0 0 2 divisions - -;
+#X floatatom 234 120 5 0 0 2 swing - -;
+#X obj 124 444 s writeFile;
+#X msg 125 315 name \$1;
+#X msg 125 284 measures \$1;
+#X msg 187 261 beats \$1;
+#X msg 238 294 divisions \$1;
+#X msg 243 331 swing \$1;
+#X msg 141 353 clear;
+#X msg 265 378 write ~/Users/travishenspeter/mm_lib/;
+#X connect 0 0 13 0;
+#X connect 1 0 14 0;
+#X connect 2 0 8 0;
+#X connect 4 0 10 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 8 0 7 0;
+#X connect 10 0 7 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 0;
+#X coords 0 -1 1 1 200 150 1 100 100;

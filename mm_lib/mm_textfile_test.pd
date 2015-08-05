@@ -1,0 +1,48 @@
+#N canvas 256 55 1034 615 10;
+#X msg 101 20 clear;
+#X obj 228 157 mm_textfile;
+#X obj 230 188 print textfile;
+#X floatatom 113 66 5 0 0 0 - - -;
+#X msg 178 4 print;
+#X msg 260 19 name 0-sam;
+#X msg 283 75 write Users/travishenspeter/Desktop;
+#X msg 375 35 read Users/travishenspeter/mm_lib/patterns/mario/0-mario.csv
+;
+#X obj 320 214 list trim;
+#X obj 319 239 route sequence;
+#X obj 315 270 route 0 1 2 3 4 5 6;
+#X obj 337 412 list prepend set;
+#X obj 338 435 list trim;
+#X msg 341 463 69 0 0 65 0 62 60 0 0 67 0 64 0 60 58 0 69 0 0 70 0
+71 72 72 0 73 0 74 0 75 76 0 69 0 0 65 0 62 60 0 0 67 0 64 0 60 58
+0 69 0 0 70 0 71 72 72 0 73 0 74 0 75 76 0;
+#X obj 314 299 list prepend set;
+#X obj 315 322 list trim;
+#X msg 318 350 65 0 0 0 0 69 70 71 72 0 0 0 0 74 75 76 77 0 0 0 0 76
+75 74 72 0 0 74 0 0 69 0 65 0 0 0 0 69 70 71 72 0 0 0 0 74 75 76 77
+0 0 0 0 76 75 74 72 0 0 74 0 0 69 0;
+#X obj 360 521 list prepend set;
+#X obj 361 544 list trim;
+#X msg 364 572 65 0 0 69 0 0 72 0 64 0 0 67 0 0 70 0 69 0 0 67 0 0
+65 0 67 0 0 65 0 0 64 0 65 0 0 69 0 0 72 0 64 0 0 67 0 0 70 0 69 0
+0 67 0 0 65 0 67 0 0 65 0 0 64 0;
+#X msg 332 127 step 0 45 13;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 8 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 10 1 11 0;
+#X connect 10 2 17 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 1 0;

@@ -5,7 +5,7 @@
 #X obj 602 530 r \$0-play;
 #X obj 549 1224 *~;
 #X obj 624 1133 vline~;
-#X msg 699 921 0 10 \, 1 10 10 \, 0 30 2876.83;
+#X msg 699 921 0 10 \, 1 10 10 \, 0 30 -50;
 #X msg 740 847 addcomma;
 #X obj 716 778 r \$0-duration;
 #X obj 722 801 t f b b b b;
@@ -86,8 +86,8 @@
 #X msg 743 869 add2 1 10 10;
 #X msg 705 888 add2 0 30 \$1;
 #X obj 706 850 - 50;
-#X msg 1217 518 read -resize /Users/travishenspeter/mm_lib/samples/india hindi devotional/chant-mantra-pitchcorrected-2.wav
-3050-sampler-0;
+#X msg 1217 518 read -resize /Users/travishenspeter/mm_lib/samples/india
+hindi devotional/chant-mantra-pitchcorrected-2.wav 3050-sampler-0;
 #X obj 1212 215 list prepend set read -resize;
 #X obj 1210 448 list append;
 #X obj 1210 470 list trim;
@@ -96,7 +96,7 @@
 #X obj 1211 490 t b a;
 #X obj 135 -27 s \$0-play;
 #X obj 631 970 r \$0-setSample;
-#X msg 554 879 0 \, 657447 2926.83;
+#X msg 554 879 0 \, 0 0;
 #X msg 507 706 add2 \$1 \$2;
 #X msg 615 831 addcomma;
 #N canvas 567 223 566 465 reverse 0;
@@ -127,7 +127,7 @@
 #X obj 310 107 s \$0-readList;
 #X obj 236 49 t b f;
 #X obj 41 8 r \$0-readList;
-#X msg -23 36 657447 2926.83;
+#X msg -23 36 0 0;
 #X obj -23 -19 list prepend set;
 #X obj -23 6 list trim;
 #X obj 198 218 pack 0 f;
@@ -167,7 +167,7 @@
 #X msg 657 761 set \$1;
 #X obj 506 732 list prepend set;
 #X obj 506 756 list trim;
-#X msg 508 792 add2 657447 2926.83;
+#X msg 508 792 add2 0 0;
 #X obj 616 734 t b b f;
 #X obj 563 636 r \$0-toDirection;
 #X obj 579 385 t b f;
@@ -457,7 +457,7 @@
 #X msg 1283 856 1;
 #X obj 137 -58 t b;
 #X obj 766 -57 route sample tempo beats direction;
-#X obj 916 -29 s \$0-toDirection;
+#X obj 916 -5 s \$0-toDirection;
 #X msg 823 -85 direction 0 \, beats 4 \, tempo 120;
 #X obj 823 -108 loadbang;
 #X floatatom 442 345 10 0 0 0 - - -;
